@@ -16,6 +16,6 @@ function lowerCaseFirst($string) : string {
   return implode(' ', $mapped_array);
 }
 function removeBlankSpace($string) : string {
-  return str_replace(" ", "", $string);
+  return trim($string);
 }
 ?>
