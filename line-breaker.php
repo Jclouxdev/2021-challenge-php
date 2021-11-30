@@ -1,6 +1,6 @@
 <?php
 
-function breakLines($string, $length) {
+function breakLines($string, $length) : string {
     $acc = [];
     $string_arr = explode(' ', $string);
     $current_line_length = 0;
