@@ -1,5 +1,5 @@
 <?php
-function factorial($number) : int {
+function factorial(int|float $number) : int|float {
   if ($number < 2) { 
     return 1; 
   } else { 
@@ -17,4 +17,6 @@ echo "\n----------------\n";
 echo factorial(5);
 echo "\n----------------\n";
 echo factorial(6);
+echo "\n----------------\n";
+echo factorial(45);
 ?>
