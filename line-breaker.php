@@ -18,19 +18,24 @@ function breakLines($string, $length) : string {
             // add space + word to final string array
             // increments current line length
             // remove treated word from array
-            $acc[] = ' ';
+            if($current_line_length == 0) {
+              $acc[] = '';
+            } else {
+              $acc[] = ' ';
+            }
             $acc[] = $word;
             $current_line_length += strlen($word);
             array_splice($string_arr, 0, 1);
         } else {
             // otherwise add break line to final string array
             // then reset line counter cause we start a new one
-            $acc[] = "\n";
+            $acc[] = PHP_EOL;
             $current_line_length = 0;
         }
     }
     return implode('', $acc);
 }
+//echo breakLines("Line with words", 15);
 //echo breakLines("Line with words should break", 15);
 //echo breakLines("Line with words should break at this spot", 15);
 ?>
