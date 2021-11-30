@@ -2,7 +2,9 @@
 
 function breakLines($string, $length) : string {
     $acc = [];
-    $string_arr = explode(' ', $string);
+    $regex = '/ |\n/';
+    //$string_arr = explode(' ', $string);
+    $string_arr = preg_split($regex, $string);
     $current_line_length = 0;
 
     while (count($string_arr) > 0) {
@@ -18,9 +20,7 @@ function breakLines($string, $length) : string {
             // add space + word to final string array
             // increments current line length
             // remove treated word from array
-            if($current_line_length == 0) {
-              $acc[] = '';
-            } else {
+            if(!$current_line_length == 0) {
               $acc[] = ' ';
             }
             $acc[] = $word;
@@ -37,5 +37,7 @@ function breakLines($string, $length) : string {
 }
 //echo breakLines("Line with words", 15);
 //echo breakLines("Line with words should break", 15);
-//echo breakLines("Line with words should break at this spot", 15);
+echo breakLines("Line with words should break at this spot", 15);
+echo PHP_EOL . '-----------------------------------' . PHP_EOL;
+echo breakLines("Title is long\nLine with words break", 12);
 ?>
