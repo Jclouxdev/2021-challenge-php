@@ -25,11 +25,12 @@ function breakLines($string, $length) {
         } else {
             // otherwise add break line to final string array
             // then reset line counter cause we start a new one
-            $acc[] = PHP_EOL; // PHP_EOL is the PHP constant for \n
+            $acc[] = "\n";
             $current_line_length = 0;
         }
     }
-
     return implode('', $acc);
 }
+//echo breakLines("Line with words should break", 15);
+//echo breakLines("Line with words should break at this spot", 15);
 ?>
