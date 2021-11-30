@@ -1,5 +1,5 @@
 <?php
-function getFloor($currentFloor, $requestedFloor, $calledButtons) {
+function getFloor($currentFloor, $requestedFloor, $calledButtons) : ?int {
     if (!$requestedFloor && $calledButtons) {
     // return l'étage le plus proche de l'étage actuel parmis le tableau $calledButtons
     $arrayMap = array_map(function($items) {
