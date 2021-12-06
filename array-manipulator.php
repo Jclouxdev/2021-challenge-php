@@ -26,10 +26,10 @@ function arrayContains(array $array, int|string|float $key) {
   $flag = 'Nothing';
   for($i=0; $i < count($array); $i++) {
     if($array[$i] == $key) {
-      $flag = $array[$i];
+      return $array[$i];
     }
   }
-  return $flag;
+  return false;
 }
 
 function merge(array ...$array) : array {
