@@ -23,7 +23,7 @@ function sum(array $array) : int {
 }
 
 function arrayContains(array $array, int|string|float $key) : int|string {
-  $flag = "Nothing";
+  $flag = 'Nothing';
   for($i=0; $i < count($array); $i++) {
     if($array[$i] == $key) {
       $flag = $array[$i];
