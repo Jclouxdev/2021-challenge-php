@@ -1,11 +1,11 @@
 <?php 
-function joinWords(array $array, string $joinBy=" ") : string {
-  $string = "";
-  for($i=0; $i < count($array); $i++) {
-    if($i == count($array)-1) {
-      $string .= $array[$i];
-    } else $string .= $array[$i].$joinBy;
+function joinWords(array $arr, string $sep=" ") : string{
+  $strfin = "";
+  $first=true;
+  foreach($arr as $val){
+      $strfin .= ($first == true) ? $val : $sep.$val;
+      $first=false;
   }
-  return $string;
+  return $strfin;
 }
 ?>
