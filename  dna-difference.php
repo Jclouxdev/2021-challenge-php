@@ -1,5 +1,5 @@
 <?php
-function dnaDiff(string $str1, string $str2) {
+function dnaDiff(string $str1, string $str2) : int | bool {
   $compteur = 0;
   if(strlen($str1) != strlen($str2)) {
     return false;
